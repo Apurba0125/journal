@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Journal - ICSSMR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+        
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: "Crimson Text", serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        h4 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* Header */
+        .header {
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo h1 {
+            color: #2c5aa0;
+            font-size: 1.8rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .logo p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        /* Navigation */
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #2c5aa0;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2c5aa0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            list-style: none;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li a {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            color: #2c3e50;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .dropdown-menu li a:hover {
+            background: #f8f9fa;
+            color: #2c5aa0;
+        }
+
+        .arrow {
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown:hover .arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Mobile Menu */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #2c3e50;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 120px 0 60px;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            color: #2c3e50;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #5a6c7d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .content-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-content h2 {
+            color: #2c5aa0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-content p {
+            font-size: 1.1rem;
+            color: #5a6c7d;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .section-content ul {
+            margin-bottom: 2rem;
+        }
+
+        .section-content ul li {
+            font-size: 1.1rem;
+            color: #5a6c7d;
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .section-content ul li::before {
+            content: "•";
+            color: #2c5aa0;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Mission Vision Grid */
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin: 3rem 0;
+        }
+
+        .mission-card,
+        .vision-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .mission-card h3,
+        .vision-card h3 {
+            color: #2c5aa0;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .mission-card p,
+        .vision-card p {
+            color: #5a6c7d;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .value-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .value-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-item h4 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+        }
+
+        .value-item p {
+            color: #5a6c7d;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #2c5aa0;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 2rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 2rem;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -20px;
+            border-left-color: white;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -20px;
+            border-right-color: white;
+        }
+
+        .timeline-year {
+            color: #2c5aa0;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content h4 {
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+        }
+
+        .timeline-content p {
+            color: #5a6c7d;
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: #2c5aa0;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1e3d72;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(44, 90, 160, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #2c5aa0;
+            border-color: #2c5aa0;
+        }
+
+        .btn-secondary:hover {
+            background: #2c5aa0;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p {
+            color: #bdc3c7;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #ffffff;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #34495e;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #2c5aa0;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 2rem;
+            text-align: center;
+            color: #bdc3c7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav.active {
+                display: block;
+            }
+
+            .nav-list {
+                flex-direction: column;
+                padding: 1rem 0;
+                gap: 0;
+            }
+
+            .nav-list li {
+                width: 100%;
+            }
+
+            .nav-link {
+                display: block;
+                padding: 1rem 2rem;
+                border-bottom: 1px solid #ecf0f1;
+            }
+
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background: #f8f9fa;
+                margin-left: 2rem;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .mission-vision {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 3rem !important;
+                padding-right: 0 !important;
+            }
+
+            .timeline-content::before {
+                left: -20px !important;
+                border-right-color: white !important;
+                border-left-color: transparent !important;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .mission-card,
+            .vision-card {
+                padding: 1.5rem;
+            }
+
+            .value-item {
+                padding: 1.5rem;
+            }
+
+            .timeline-item {
+                padding-left: 2rem !important;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>ICSSMR</h1>
+                <p>International Research Publication</p>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="nav" id="navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+
+                    <!-- About Us Dropdown -->
+                    <li class="dropdown">
+                        <a href="#" class="nav-link active">
+                            About Us <span class="arrow">▼</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="aboutthejournal.html">About the Journal</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Editorial Board Dropdown -->
+                    <li class="dropdown">
+                        <a href="#" class="nav-link">
+                            Editorial Board <span class="arrow">▼</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Patron</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#" class="nav-link">View All Issues</a></li>
+                    <li><a href="#" class="nav-link">Author Guidelines</a></li>
+                    <li><a href="#" class="nav-link">Submission</a></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About the Journal</h1>
+            <p>Discover the story, mission, and values that drive our commitment to advancing knowledge through rigorous
+                academic research and scholarly excellence.</p>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-content">
+                <h2>Our Story</h2>
+                <p>The <strong>Indian Centre for Social Science and Management Research (ICSSMR)</strong> was
+                    established with a vision to create a premier platform for academic excellence in the fields of
+                    Management Studies and Social Sciences. As a registered entity under the Micro, Small & Medium
+                    Enterprises (MSME), Government of India, we have been at the forefront of promoting quality research
+                    and scholarly discourse.</p>
+
+                <p>Our journal serves as a bridge between theoretical knowledge and practical applications, fostering
+                    innovation and critical thinking among researchers, academicians, and industry professionals
+                    worldwide. We are committed to maintaining the highest standards of academic integrity while
+                    promoting interdisciplinary research that addresses contemporary challenges.</p>
+
+                <p>Since our inception, we have published groundbreaking research that has contributed significantly to
+                    the advancement of knowledge in various domains including business management, organizational
+                    behavior, social policy, economics, and sustainable development.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="content-section">
+        <div class="container">
+            <div class="mission-vision">
+                <div class="mission-card fade-in">
+                    <h3>Our Mission</h3>
+                    <p>To provide a distinguished platform for researchers and scholars to publish high-quality,
+                        peer-reviewed research that contributes to the advancement of knowledge in Management Studies
+                        and Social Sciences, while fostering academic excellence and promoting evidence-based solutions
+                        to real-world challenges.</p>
+                </div>
+                <div class="vision-card fade-in">
+                    <h3>Our Vision</h3>
+                    <p>To be recognized globally as a leading academic journal that bridges the gap between theoretical
+                        research and practical applications, inspiring innovation and driving positive change in society
+                        through rigorous scholarship and collaborative research initiatives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-content">
+                <h2>Our Core Values</h2>
+                <div class="values-grid">
+                    <div class="value-item fade-in">
+                        <div class="value-icon">🎯</div>
+                        <h4>Academic Excellence</h4>
+                        <p>We maintain the highest standards of scholarly rigor through comprehensive peer review and
+                            editorial oversight, ensuring every publication meets international academic standards.</p>
+                    </div>
+                    <div class="value-item fade-in">
+                        <div class="value-icon">🤝</div>
+                        <h4>Integrity & Ethics</h4>
+                        <p>We uphold the principles of academic honesty, transparency, and ethical conduct in all our
+                            publishing processes, fostering trust within the academic community.</p>
+                    </div>
+                    <div class="value-item fade-in">
+                        <div class="value-icon">🌍</div>
+                        <h4>Global Perspective</h4>
+                        <p>We embrace diverse viewpoints and encourage international collaboration, recognizing that
+                            knowledge transcends geographical and cultural boundaries.</p>
+                    </div>
+                    <div class="value-item fade-in">
+                        <div class="value-icon">💡</div>
+                        <h4>Innovation</h4>
+                        <p>We promote cutting-edge research methodologies and encourage innovative approaches to
+                            addressing contemporary challenges in management and social sciences.</p>
+                    </div>
+                    <div class="value-item fade-in">
+                        <div class="value-icon">📈</div>
+                        <h4>Impact & Relevance</h4>
+                        <p>We prioritize research that has practical implications and contributes meaningfully to
+                            policy-making, organizational practices, and societal development.</p>
+                    </div>
+                    <div class="value-item fade-in">
+                        <div class="value-icon">🔓</div>
+                        <h4>Open Access</h4>
+                        <p>We believe in democratizing knowledge by providing open access to quality research, ensuring
+                            that valuable insights reach a broader audience worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Focus Areas -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-content">
+                <h2>Research Focus Areas</h2>
+                <p>Our journal welcomes high-quality research across a broad spectrum of disciplines within Management
+                    Studies and Social Sciences. We particularly encourage submissions in the following areas:</p>
+
+                <ul>
+                    <li><strong>Strategic Management:</strong> Corporate strategy, competitive advantage, and
+                        organizational transformation</li>
+                    <li><strong>Human Resource Management:</strong> Talent management, organizational behavior, and
+                        workplace dynamics</li>
+                    <li><strong>Marketing & Consumer Behavior:</strong> Digital marketing, brand management, and
+                        consumer psychology</li>
+                    <li><strong>Financial Management:</strong> Corporate finance, investment strategies, and financial
+                        markets</li>
+                    <li><strong>Operations Management:</strong> Supply chain optimization, quality management, and
+                        process innovation</li>
+                    <li><strong>Social Policy & Development:</strong> Public administration, social welfare, and
+                        community development</li>
+                    <li><strong>Economics & Public Policy:</strong> Economic development, policy analysis, and
+                        regulatory frameworks</li>
+                    <li><strong>Sustainability & CSR:</strong> Environmental management, social responsibility, and
+                        sustainable business practices</li>
+                    <li><strong>Technology & Innovation:</strong> Digital transformation, emerging technologies, and
+                        innovation management</li>
+                    <li><strong>Cross-cultural Studies:</strong> International business, cultural dynamics, and global
+                        management practices</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publication Timeline -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-content">
+                <h2>Our Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2009</div>
+                            <h4>Foundation</h4>
+                            <p>ICSSMR was established with the vision of creating a premier research platform for
+                                Management Studies and Social Sciences.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2012</div>
+                            <h4>First Publication</h4>
+                            <p>Launched our inaugural issue featuring groundbreaking research from leading academicians
+                                and industry experts.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2016</div>
+                            <h4>International Recognition</h4>
+                            <p>Achieved international indexing and recognition, expanding our global reach and impact in
+                                the academic community.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2020</div>
+                            <h4>Digital Transformation</h4>
+                            <p>Implemented advanced digital publishing platforms and enhanced our online presence to
+                                serve the global research community better.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2024</div>
+                            <h4>Excellence Milestone</h4>
+                            <p>Celebrating 15 years of academic excellence with over 2,500 published articles and a
+                                growing impact factor of 4.8.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-content" style="text-align: center;">
+                <h2>Join Our Academic Community</h2>
+                <p>We invite researchers, academicians, and practitioners to be part of our growing community. Whether
+                    you're looking to publish your research, serve as a peer reviewer, or simply stay updated with the
+                    latest developments in your field, ICSSMR provides the platform for meaningful academic engagement.
+                </p>
+
+                <div style="margin-top: 2rem;">
+                    <a href="#" class="btn btn-primary" style="margin-right: 1rem;">Submit Your Research</a>
+                    <a href="#" class="btn btn-secondary">Become a Reviewer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>ICSSMR Journal</h4>
+                    <p>Pioneering the future of academic publishing through innovation, excellence, and global
+                        collaboration in Management Studies and Social Sciences.</p>
+                    <!-- <div class="social-links">
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                        <a href="#" aria-label="Facebook">📘</a>
+                    </div> -->
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About the Journal</a></li>
+                        <li><a href="#">Editorial Board</a></li>
+                        <li><a href="#">Author Guidelines</a></li>
+                        <li><a href="#">Submission Portal</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Current Issue</a></li>
+                        <li><a href="#">Digital Archive</a></li>
+                        <li><a href="#">Search Articles</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: editor@icssmr.org</p>
+                    <p>ISSN: 2347-9671</p>
+                    <p>Impact Factor: 4.8</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 ICSSMR. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileToggle = document.getElementById("mobileToggle")
+        const navigation = document.getElementById("navigation")
+
+        mobileToggle.addEventListener("click", () => {
+            navigation.classList.toggle("active")
+
+            // Animate hamburger menu
+            const spans = mobileToggle.querySelectorAll("span")
+            if (navigation.classList.contains("active")) {
+                spans[0].style.transform = "rotate(45deg) translate(5px, 5px)"
+                spans[1].style.opacity = "0"
+                spans[2].style.transform = "rotate(-45deg) translate(7px, -6px)"
+            } else {
+                spans[0].style.transform = "none"
+                spans[1].style.opacity = "1"
+                spans[2].style.transform = "none"
+            }
+        })
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll(".nav-link").forEach((link) => {
+            link.addEventListener("click", () => {
+                navigation.classList.remove("active")
+                const spans = mobileToggle.querySelectorAll("span")
+                spans[0].style.transform = "none"
+                spans[1].style.opacity = "1"
+                spans[2].style.transform = "none"
+            })
+        })
+
+        // Header scroll effect
+        window.addEventListener("scroll", () => {
+            const header = document.querySelector(".header")
+            if (window.scrollY > 100) {
+                header.style.background = "rgba(255, 255, 255, 0.95)"
+                header.style.backdropFilter = "blur(10px)"
+            } else {
+                header.style.background = "#ffffff"
+                header.style.backdropFilter = "none"
+            }
+        })
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px",
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible")
+                }
+            })
+        }, observerOptions)
+
+        // Add fade-in class to elements and observe them
+        document.addEventListener("DOMContentLoaded", () => {
+            const elementsToAnimate = document.querySelectorAll(".fade-in")
+            elementsToAnimate.forEach((el) => {
+                observer.observe(el)
+            })
+        })
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault()
+                const target = document.querySelector(this.getAttribute("href"))
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                    })
+                }
+            })
+        })
+
+        // Add loading states for buttons
+        document.querySelectorAll(".btn").forEach((btn) => {
+            btn.addEventListener("click", function (e) {
+                if (this.href && this.href.includes("#")) {
+                    return // Let anchor links work normally
+                }
+
+                const originalText = this.textContent
+                this.textContent = "Loading..."
+                this.style.opacity = "0.7"
+
+                setTimeout(() => {
+                    this.textContent = originalText
+                    this.style.opacity = "1"
+                }, 2000)
+            })
+        })
+    </script>
+</body>
+
+</html>
