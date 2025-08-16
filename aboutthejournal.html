@@ -220,6 +220,69 @@
             margin: 0 auto;
         }
 
+
+
+
+        /* Quick Links */
+        .quick-links {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .quick-links h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 3rem;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .link-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .link-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .link-card p {
+            color: #5a6c7d;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .card-link {
+            color: #2c5aa0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .card-link:hover {
+            color: #1e3d72;
+        }
+
+
         /* Content Sections */
         .content-section {
             padding: 80px 0;
@@ -665,13 +728,14 @@
 
                     <!-- About Us Dropdown -->
                     <li class="dropdown">
-                        <a href="#" class="nav-link active">
-                            About Us <span class="arrow">▼</span>
+                        <a href="aboutthejournal.html" class="nav-link active">
+                            About Us
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="aboutthejournal.html">About the Journal</a></li>
-                            <!-- <li><a href="whatwedo.html">What We Do</a></li> -->
-                        </ul>
+                        <!-- <span class="arrow">▼</span> -->
+                        <!-- <ul class="dropdown-menu">
+                                                <li><a href="aboutthejournal.html">About the Journal</a></li>
+                                                <li><a href="whatwedo.html">What We Do</a></li>
+                                            </ul> -->
                     </li>
 
                     <!-- Editorial Board Dropdown -->
@@ -703,31 +767,95 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>About the Journal</h1>
-            <p>Discover the story, mission, and values that drive our commitment to advancing knowledge through rigorous
-                academic research and scholarly excellence.</p>
+            <h1>About Us</h1>
+            <p>Indian Centre for Social Science and Management Research (ICSSMR)</p>
         </div>
     </section>
 
     <!-- Introduction Section -->
-    <section class="content-section">
+<section class="content-section">
+    <div class="container">
+        <div class="section-content" style="text-align: justify; line-height: 1.8;">
+            <!-- <h2>Our Story</h2> -->
+            <p>
+                The <strong>Indian Centre for Social Science and Management Research (ICSSMR)</strong> is a premier
+                institution
+                dedicated to advancing research, education, and knowledge dissemination in the fields of
+                <strong>Management
+                    Studies</strong> and <strong>Social Sciences</strong>. Registered under the <strong>Micro, Small
+                    &amp; Medium
+                    Enterprises (MSME)</strong>, Government of India, ICSSMR serves as a dynamic platform for
+                academicians,
+                researchers, professionals, and students to engage in meaningful academic and professional pursuits.
+            </p>
+
+            <p>
+                Our mission is to foster an environment of <strong>innovative thinking, collaborative research, and
+                    professional
+                    development</strong>, empowering individuals and institutions to contribute to the progress of
+                society through
+                impactful research and knowledge sharing.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
+
+    <section class="quick-links">
         <div class="container">
-            <div class="section-content">
-                <h2>Our Story</h2>
-                <p>The <strong>Indian Centre for Social Science and Management Research (ICSSMR)</strong> was
-                    established with a vision to create a premier platform for academic excellence in the fields of
-                    Management Studies and Social Sciences. As a registered entity under the Micro, Small & Medium
-                    Enterprises (MSME), Government of India, we have been at the forefront of promoting quality research
-                    and scholarly discourse.</p>
+            <h2>What We Do</h2>
+            <div class="links-grid">
 
-                <p>Our journal serves as a bridge between theoretical knowledge and practical applications, fostering
-                    innovation and critical thinking among researchers, academicians, and industry professionals
-                    worldwide. We are committed to maintaining the highest standards of academic integrity while
-                    promoting interdisciplinary research that addresses contemporary challenges.</p>
+                <div class="link-card">
+                    <div class="card-icon">📝</div>
+                    <h3>Research & Education Programs</h3>
+                    <a href="whatwedo.html" class="card-link">Start Publishing →</a>
+                </div>
 
-                <p>Since our inception, we have published groundbreaking research that has contributed significantly to
-                    the advancement of knowledge in various domains including business management, organizational
-                    behavior, social policy, economics, and sustainable development.</p>
+                <div class="link-card">
+                    <div class="card-icon">🎓</div>
+                    <h3>Academic Events</h3>
+                    <a href="#" class="card-link">View Events →</a>
+                </div>
+
+                <div class="link-card">
+                    <div class="card-icon">📖</div>
+                    <h3>Publications</h3>
+                    <a href="#" class="card-link">Browse Publications →</a>
+                </div>
+
+                <div class="link-card">
+                    <div class="card-icon">🚀</div>
+                    <h3>Capacity Building for Researchers</h3>
+                    <a href="#" class="card-link">Enhance Skills →</a>
+                </div>
+
+                <div class="link-card">
+                    <div class="card-icon">💰</div>
+                    <h3>Funded Research Grants</h3>
+                    <a href="#" class="card-link">Apply for Grants →</a>
+                </div>
+
+                <div class="link-card">
+                    <div class="card-icon">🤝</div>
+                    <h3>Institutional Collaborations</h3>
+                    <a href="#" class="card-link">Partner With Us →</a>
+                </div>
+
+                <div class="link-card">
+                    <div class="card-icon">🌐</div>
+                    <h3>Membership Programs</h3>
+                    <a href="#" class="card-link">Join Now →</a>
+                </div>
+
+                <div class="link-card">
+                    <div class="card-icon">👩‍💻</div>
+                    <h3>Internships</h3>
+                    <a href="#" class="card-link">Apply for Internship →</a>
+                </div>
+
             </div>
         </div>
     </section>
@@ -759,7 +887,7 @@
     </section>
 
     <!-- Core Values -->
-    <section class="content-section">
+    <!-- <section class="content-section">
         <div class="container">
             <div class="section-content">
                 <h2>Our Core Mission</h2>
@@ -787,7 +915,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 
 
@@ -828,7 +956,7 @@
 
 
     <!-- Publication Timeline -->
-    <section class="content-section">
+    <!-- <section class="content-section">
         <div class="container">
             <div class="section-content">
                 <h2>Our Journey</h2>
@@ -848,7 +976,7 @@
                             <p>Launched our inaugural issue featuring groundbreaking research from leading academicians
                                 and industry experts.</p>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- <div class="timeline-item fade-in">
                         <div class="timeline-content">
                             <div class="timeline-year">2016</div>
@@ -873,13 +1001,13 @@
                                 growing impact factor of 4.8.</p>
                         </div>
                     </div> -->
-                </div>
+                <!-- </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Call to Action -->
-    <section class="content-section">
+    <!-- <section class="content-section">
         <div class="container">
             <div class="section-content" style="text-align: center;">
                 <h2>Join Our Academic Community</h2>
@@ -894,7 +1022,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Footer -->
     <footer class="footer">
@@ -911,7 +1039,7 @@
                     </div> -->
                 </div>
 
-                <div class="footer-section">
+                <!-- <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#">About the Journal</a></li>
@@ -919,9 +1047,9 @@
                         <li><a href="#">Author Guidelines</a></li>
                         <li><a href="#">Submission Portal</a></li>
                     </ul>
-                </div>
+                </div> -->
 
-                <div class="footer-section">
+                <!-- <div class="footer-section">
                     <h4>Resources</h4>
                     <ul>
                         <li><a href="#">Current Issue</a></li>
@@ -929,13 +1057,13 @@
                         <li><a href="#">Search Articles</a></li>
                         <li><a href="#">Contact Support</a></li>
                     </ul>
-                </div>
+                </div> -->
 
                 <div class="footer-section">
                     <h4>Contact Info</h4>
                     <p>Email: editor@icssmr.org</p>
-                    <p>ISSN: 2347-9671</p>
-                    <p>Impact Factor: 4.8</p>
+                    <!-- <p>ISSN: 2347-9671</p> -->
+                    <!-- <p>Impact Factor: 4.8</p> -->
                 </div>
             </div>
 
